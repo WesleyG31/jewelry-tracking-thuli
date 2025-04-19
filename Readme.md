@@ -14,7 +14,14 @@ Primero empezaré con el tracking de anillos y dedos
 
 Stack: ¿qué herramientas y modelos usaré?
 
-Por el tiempo, utilizaré un modelo ya entrenado como mediapipe
+Por el tiempo, utilizaré un modelo ya entrenado como mediapipe.
+Python	Lenguaje principal	Tu dominio + comunidad + rapidez
+OpenCV	Procesamiento de imágenes, video, visualización	Ligero, flexible
+MediaPipe Hands	Detección de mano y dedos	Preciso, en tiempo real, ideal para mobile-first
+YOLOv5 (opcional)	Detección más precisa de anillos	Solo si lo básico con heurística falla
+Google Colab / Local	Desarrollo inicial	Rápido de montar y compartir
+Draw.io	Diagramas de arquitectura	Para documentación técnica
+Google Drive	Envío de entregables	Solicitado por la empresa
 
 
 
