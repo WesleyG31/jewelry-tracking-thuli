@@ -15,7 +15,15 @@ st.title("Real-Time Ring Detector and Tracking with YOLOv8")
 base_path = os.path.dirname(__file__)
 os.makedirs(os.path.join(base_path, "output"), exist_ok=True)
 
-modes_availables = ["Real Time","External Webcam", "Analize Video"]
+
+running_in_cloud = os.environ.get("STREAMLIT_SERVER_HEADLESS", "false") == "true"
+
+if running_in_cloud:
+    modes_availables = ["Analize Video"]
+else:
+    modes_availables = ["Real Time", "External Webcam", "Analize Video"]
+
+
 
 @st.cache_resource
 def load_models():
