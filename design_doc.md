@@ -84,18 +84,18 @@ Overlay (OpenCV or Streamlit UI)
 
 ### Design Decisions & Alternatives
 
-
-    | Choise                    | Why? / Why not?                                  |
-    |------------------------------|----------------------------------------------|
-    | Mediapipe Hands  | Precise finger/hand detection, Ideal for mobile first               |
-    | MCP–PIP based ROI  | Aligns with where rings are worn, better than fixed box                  |
-    | Perspective warping  | Keeps ROI aligned despite hand rotation, improves detection                  |
+    | Choise               | Why? / Why not?                                                                            |
+    |----------------------|--------------------------------------------------------------------------------------------|
+    | Mediapipe Hands      | Precise finger/hand detection, Ideal for mobile first                                      |
+    | MCP–PIP based ROI    | Aligns with where rings are worn, better than fixed box                                    |
+    | Perspective warping  | Keeps ROI aligned despite hand rotation, improves detection                                |
     | Heuristic Detection  | It depends a lot on the color of the rings, it cannot be a single model for several rings. |
-    | Custom ring model  | Pretrained YOLOs don’t detect rings — I trained my own                |
-    | YOLOv8n Detection  | Accurate, efficient, and easy to train/fine-tune                  |
-    | YOLOv8n Tracking             | Too much latency for this case                 |
-    | Streamlit | Easy to test and demo without needing local setup |
-    | OpenCV | Useful for debugging and real-time experimentation |
+    | Custom ring model    | Pretrained YOLOs don’t detect rings — I trained my own                                     |
+    | YOLOv8n Detection    | Accurate, efficient, and easy to train/fine-tune                                           |
+    | YOLOv8n Tracking     | Too much latency for this case                                                             |
+    | Streamlit            | Easy to test and demo without needing local setup                                          |
+    | OpenCV               | Useful for debugging and real-time experimentation                                         |
+
 
 ---
 
@@ -141,7 +141,8 @@ I assumed the region between MCP and PIP would cover most rings, and I wanted a 
 **Learning:**  
 A box without considering finger orientation causes misalignment, especially in motion. ROI must rotate with the finger to stay accurate.
 
-(Video)
+https://github.com/user-attachments/assets/36df7985-65f2-4bbd-bf9c-d04824c7b41e
+
 
 ---
 
@@ -161,7 +162,7 @@ I wanted the ROI to follow the finger's angle for better localization and to imp
 Needed something more precise.
 Improve the maths, specially the orientation for vectors and how to draw the rectangle
 
-(foto del la caja)
+![vectors](https://github.com/user-attachments/assets/cf6fb72d-815c-4ec9-bfc4-0b0084388ceb)
 
 Then I needed to understand how to get the points of the rectangle, what calculations did I have to make?
 Everything had to be based on the direction of the vector.
@@ -171,15 +172,16 @@ Top-Right = cx - lx + wx, cy - ly + wy
 Bottom-Right = cx + lx + wx, cy + ly + wy
 Bottom-Left = cx + lx - wx, cy + ly - wy
 
-(foto 2)
+
+![points_box](https://github.com/user-attachments/assets/91bb7299-5746-45ec-b6d2-24d1d684ad8b)
 
 Then I realized I can't send this image to the model because it is not a good perspective so that's why I use warpPerspective
 
-(foto 3)
+![perspectiva del rectangulo](https://github.com/user-attachments/assets/f7f8c7d3-f940-45c5-a5d8-9261da884ec6)
 
 Then to draw the box in a good perspective I needed to understand how to draw the rectangle based on point just joining the points.
 
-(foto 4)
+![box perspectiva](https://github.com/user-attachments/assets/8dd45d6f-9912-4a92-958a-98ef60b13d1a)
 
 ---
 
@@ -199,7 +201,8 @@ To ensure the ROI remains aligned regardless of hand orientation or rotation —
 **Learning:**  
 This was the turning point. Properly aligned ROIs significantly improve consistency and allow more generalizable detection logic.
 
-(video)
+https://github.com/user-attachments/assets/aac36c9a-137a-4bf7-a9d5-47b978a09608
+
 
 ---
 
@@ -220,9 +223,13 @@ This method is fast and doesn’t require training data and thought it would be 
 **Learning:**  
 Heuristics are limited when dealing with lighting, and style diversity. I needed a learned model.
 
-(video)
+https://github.com/user-attachments/assets/819c478f-79e1-41dd-b6ae-6c89d6449cdc
+
+https://github.com/user-attachments/assets/13d5014b-77f7-4dc3-bc93-14a92619fc29
+
 
 ---
+
 
 ### 🔹 YOLOv8n Model Integration
 
@@ -245,7 +252,9 @@ A trained detector is essential for visual tasks involving variable appearance a
 
 Dataset is really important, also labeling takes so much time.
 
-(video)
+https://github.com/user-attachments/assets/ef994c07-72f2-44ec-b25c-0afc6e1e3d75
+
+
 
 ---
 
@@ -338,8 +347,5 @@ Thanks for this opportunity. I hope to continue building with you.
 - Wesley
 
 
-
-
-> ✅ Perfect for companies in mobile-first jewelry marketplace designed for modern consumers
 
 
