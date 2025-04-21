@@ -9,7 +9,7 @@ def main():
 
     base_path = os.path.dirname(__file__)
 
-    video_path= 0  #1 for webcam, 0 for external camera, or path to video file
+    video_path= 1  #1 for webcam, 0 for external camera, or path to video file
     cap= cv2.VideoCapture(video_path)
     tracker= HandTracker()
 

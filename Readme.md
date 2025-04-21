@@ -1,114 +1,101 @@
-# 🚦 Intelligent Traffic Analysis System (YOLOv8 + OCR + Streamlit)
+# Hands and ring tracking and detection (Mediapipe and YOLO)
 
+---
 
-Alcance: ¿qué parte resolveré?
-Seguimiento de dedos y anillos, Es el núcleo técnico del reto. Tienes experiencia con YOLO y tracking.
+## Overview
 
-Supuestos: ¿qué limitaciones tengo?
-1 week
-Adaptabilidad mobile,Documentamos cómo el pipeline puede funcionar en tiempo real y adaptarse.
+Anna is a fashionista with a passion for rings and earrings, and she meticulously coordinates her jewelry with her outfit – matching by color, style, and design. Typically, she wears two rings on her left hand and one on her right. As a social media influencer, Anna creates a video showcasing her jewelry by moving her hands in various directions (to capture the rings and earrings from every angle) and concludes with a full-body view as she rotates the camera. The end goal is to produce a seamless result using either a video synthesis or a 3D modeling approach.
 
-Estrategia: ¿profundizo o abarco?
+Finger & Jewelry Tracking:
+Focus solely on tracking the rings on Anna's fingers.
+Experiment with techniques for precise finger and jewelry rendering and localization using computer vision.
 
-Primero empezaré con el tracking de anillos y dedos
+---
 
-Stack: ¿qué herramientas y modelos usaré?
+## Find more information in desing doc
 
-Por el tiempo, utilizaré un modelo ya entrenado como mediapipe.
-Python	Lenguaje principal	Tu dominio + comunidad + rapidez
-OpenCV	Procesamiento de imágenes, video, visualización	Ligero, flexible
-MediaPipe Hands	Detección de mano y dedos	Preciso, en tiempo real, ideal para mobile-first
-YOLOv5 (opcional)	Detección más precisa de anillos	Solo si lo básico con heurística falla
-Google Colab / Local	Desarrollo inicial	Rápido de montar y compartir
-Draw.io	Diagramas de arquitectura	Para documentación técnica
-Google Drive	Envío de entregables	Solicitado por la empresa
+📽️ [YouTube](https://youtu.be/OcbyjACjOKw)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-An end-to-end **vehicle detection and traffic monitoring system** powered by **Computer Vision** and **Deep Learning**. This project is designed for real-world applications like smart cities, traffic law enforcement, autonomous mobility, and urban analytics.
-
-Deployed with **Streamlit** and hosted via **Hugging Face Spaces** using a custom **Docker** environment.
-
+---
 
 ## 📽️ Demo
 
-📽️ [YouTube](https://youtu.be/OcbyjACjOKw)
+📽️ [YouTube Part 1](https://youtu.be/q1fTYXFudIs)
+📽️ [YouTube Part 1](https://youtu.be/GGSkEnNGisc)
 
 
 ---
 
-## 📸 What it Does
+## 🚀 Features
 
-- 🚗 Detects cars, buses, motorbikes, pedestrians, and trams
-- 🧠 Tracks individual vehicles over time with object IDs
-- ⚡ Estimates real speed using perspective transformation
-- 🚨 Detects speed violations
-- 🔍 Reads license plates using OCR (EasyOCR)
-- 📊 Generates real-time traffic statistics
-- 📄 Outputs automatic PDF report with charts and violations
-- 🌐 Allows users to upload their own videos via web app
+- 🧠 **End-to-End AI Pipeline**: From video capture → hand detection → region extraction → YOLO-based detection → visual overlay.
+- 🔍 **Finger-Aware Region Extraction**: ROI is aligned to the direction of the finger (MCP–PIP), making it rotation-robust.
+- 💡 **YOLOv8n Model**: Custom-trained model to detect rings with real-time performance.
+- 🌐 **Streamlit Web App**: Easily test the system in a browser 
+- 🧰 **Modular Architecture**: Clean, reusable, and extensible codebase.
 
 ---
 
 ## 🧠 Technologies Used
 
-| Component       | Tech Stack                        |
-|----------------|------------------------------------|
-| Object Detection | YOLOv8 (Ultralytics)              |
-| Tracking         | YOLOv8 (Ultralytics)              |
-| Speed Estimation | OpenCV + Perspective Geometry     |
-| OCR              | EasyOCR                           |
-| Dashboard        | Streamlit                         |
-| Deployment       | Hugging Face Spaces + Docker      |
-| Visualization    | Matplotlib                        |
-| Report Generation| FPDF                              |
+| Component                    | Tech Stack                                   |
+|------------------------------|----------------------------------------------|
+| Hands Detection / Tracking   | MediaPipe                                    |
+| Object Detection             | Heuristic Detection / YOLOv8                 |
+| Region Extraction            | MCP–PIP aligned / warpPerspective            |
+| Deployment                   | Local PC / Streamlit Local / Streamlit Cloud |
 
 ---
 
 ## 📂 Project Structure
 
 ```
-├── streamlit_app.py          # Web interface
+├── app.py                          # Streamlit web interface
+├── main_ring_detector_yolo.py      # Main Real-time detector
+├── main_ring_detector_colors.py    # Heuristic Detection 
+├── main_region_detector.py         # To try MCP–PIP aligned / warpPerspective  
+├── main_hand_tracker.py            # To Try Google’s MediaPipe Hands
 ├── src/
-│   ├── pipeline/             # Main pipeline (process_video)
-│   ├── speed_analysis/       # Speed estimator
-│   ├── analytics/            # Charts & statistics
-│   ├── reports/              # PDF generator
-│   └── utils/                # Video saving, perspective points
-├── data/
-│   ├── output_data/          # Output: video, csv, report
-│   └── videos/               # Input test videos
-├── requirements.txt
-├── Dockerfile
+│   ├── hand_tracker.py             # Google’s MediaPipe Hands
+│   ├── region_finger.py            # Extract the Area 
+│   ├── ring_detector_colors.py     # Calculations for heuristic detection
+│   ├── ring_detector_yolo.py       # Code for Yolo detection
+├── utils/
+│   ├── get_dataset.py              # To get your custom dataset
+│   └── video_utils.py              # To save the video
+├── models/
+│   ├── yolov8n_rings.pt            # Custom Yolo model 
+├── data/                           # All the data
+│   ├── raw/                        # Images from get_dataset.py
+    ├── data_clean/                 # Data proccesed
+        ├── train/                  # Train data
+        ├── test/                   # Test data
+        ├── valid/                  # Valid data
+        ├── data.yaml               # Data yaml
+        ├── train_yolo_v8.py        # Code to train the model
+├── output/                         # To save the video proccesed
+├── requirements.txt                # All libraries
+├── packages.txt                    # Library for streamlit
+├── torch-cuda.txt                  # If you have GPU you can install cuda 
 └── README.md
 ```
 
 ---
 
-## 🚀 How to Run It Locally
+## 🚀 How to Run 
+
+### Local PC
 
 1. Clone the repo
 ```bash
-git clone https://github.com/your-username/vehicle-intelligent-traffic.git
-cd vehicle-intelligent-traffic
+git clone https://github.com/WesleyG31/jewelry-tracking-thuli.git
+cd jewelry-tracking-thuli
 ```
 
-2. (Optional) Create a virtual environment
+2. (Optional) Create a virtual environment with Anaconda
 ```bash
-conda create -n traffic python=3.10
-conda activate traffic
+conda create -n jewelry-tracking-thuli python=3.10
+conda activate jewelry-tracking-thuli
 ```
 
 3. Install dependencies
@@ -116,38 +103,42 @@ conda activate traffic
 pip install -r requirements.txt
 ```
 
-4. Run the app locally
+4. (Optional) Install Cuda
 ```bash
-streamlit run streamlit_app.py
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
 ```
 
-5. Upload a video (`.mp4`) and get real-time results, charts, and PDF report
+5. Run the python file locally
+```bash
+The path can be changed for a video or webcam is this line 
+├── main_ring_detector_yolo.py 
+    video_path= 1  #1 for webcam, 0 for external camera, or path to video file
 
----
+Then run this line
+python main_ring_detector_yolo.py
+```
 
-## 🌐 Try the Live Demo
+### Local Streamlit
 
-> [![Hugging Face Space](https://img.shields.io/badge/🚀%20Try%20on-Hugging%20Face-blue?logo=huggingface)](https://huggingface.co/spaces/WesleyGonzales/vehicle-intelligent-traffic)
+Repeat the same steps until step 4.
 
-No installation required. Just open the link and upload a traffic video!
+1. Run the streamlit file locally
+```bash
+streamlit run app.py
+```
+###  Streamlit cloud
 
----
-
-## 🧪 Example Use Cases
-
-- 🚓 Speed enforcement with license plate capture
-- 🧠 Urban analytics and vehicle density mapping
-- 🚦 Smart city infrastructure and automation
-- 🤖 Robotics & autonomous navigation input
+1. No installation required. Just open the link and upload a video.
+```bash
+https://jewelry-tracking-thuli-gquvljglhikn4l8ow2cz8k.streamlit.app/
+PD: Streamlit Cloud only allows video uploads. It does not allow webcam use.
+```
 
 ---
 
 ## 📄 Sample Outputs
 
-- ✅ Annotated video with speed overlays
-- ✅ CSV with tracking and violations
-- ✅ Charts: vehicle count, average speed
-- ✅ Auto-generated PDF report
+- ✅ Annotated video with tracking and detections.
 
 ---
 
@@ -157,9 +148,10 @@ This project demonstrates:
 - End-to-end pipeline (from detection to deployment)
 - Real-time processing with computer vision
 - Integration of multiple advanced AI components
-- Hands-on understanding of AI for mobility and cities
+- Hands-on understanding of AI for Jewelry e-commerce space
+- The lightest form of tracking and detection
 
-> ✅ Perfect for companies in robotics, smart mobility, autonomous vehicles, and AI-driven urban systems.
+> ✅ Perfect for companies in mobile-first jewelry marketplace designed for modern consumers
 
 ---
 
@@ -169,7 +161,6 @@ This project demonstrates:
 Computer Vision & AI Engineer  
 📫 [wes.gb31@gmail.com]  
 🔗 [https://www.linkedin.com/in/wesleygb/](https://www.linkedin.com/in/wesleygb/)  
-🌐 [yourportfolio.com](https://yourportfolio.com)
 🤖 [My Github](https://github.com/WesleyG31)
 ---
 

@@ -24,7 +24,6 @@ else:
     modes_availables = ["Real Time", "External Webcam", "Analize Video"]
 
 
-
 @st.cache_resource
 def load_models():
     tracker = HandTracker()
