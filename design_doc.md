@@ -280,7 +280,9 @@ Presentation matters — making your tools usable for others adds serious value 
 
 ---
 
-### 🔹 Demo
+### 🔹 Demo 
+
+- Click on the videos to watch
 
 [![Demo Part 1](https://img.youtube.com/vi/q1fTYXFudIs/hqdefault.jpg)](https://www.youtube.com/watch?v=q1fTYXFudIs)
 
