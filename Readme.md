@@ -14,7 +14,14 @@ Experiment with techniques for precise finger and jewelry rendering and localiza
 
 ## Find more information in desing doc
 
-📽️ [YouTube](https://youtu.be/OcbyjACjOKw)
+- Assumptions and scope of work.
+- Step-by-step implementation details.
+- Discussion on failure cases and iterative improvements.
+- Experiments, decision-making process, and learning points.
+
+```
+├── desing_doc.md                   # Provide a detailed design doc 
+```
 
 ---
 
@@ -78,6 +85,7 @@ Experiment with techniques for precise finger and jewelry rendering and localiza
 ├── requirements.txt                # All libraries
 ├── packages.txt                    # Library for streamlit
 ├── torch-cuda.txt                  # If you have GPU you can install cuda 
+├── desing_doc.md                   # Provide a detailed design doc 
 └── README.md
 ```
 
