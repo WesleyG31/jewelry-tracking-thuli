@@ -282,9 +282,9 @@ Presentation matters — making your tools usable for others adds serious value 
 
 ### 🔹 Demo
 
-[![Demo Part 1](https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg)](https://youtu.be/q1fTYXFudIs)
+[![Demo Part 1](https://img.youtube.com/vi/q1fTYXFudIs/hqdefault.jpg)](https://www.youtube.com/watch?v=q1fTYXFudIs)
 
-[![Demo Part 2](https://img.youtube.com/vi/VIDEO_ID/hqdefault.jpg)](https://youtu.be/GGSkEnNGisc)
+[![Demo Part 2](https://img.youtube.com/vi/GGSkEnNGisc/hqdefault.jpg)](https://www.youtube.com/watch?v=GGSkEnNGisc)
 
 ---
 
