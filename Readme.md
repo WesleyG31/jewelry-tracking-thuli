@@ -1,4 +1,4 @@
-# Hands and ring tracking and detection (Mediapipe and YOLO)
+# Hands & Ring tracking and detection (Mediapipe and YOLO)
 
 ---
 
@@ -21,7 +21,8 @@ Experiment with techniques for precise finger and jewelry rendering and localiza
 ## 📽️ Demo
 
 📽️ [YouTube Part 1](https://youtu.be/q1fTYXFudIs)
-📽️ [YouTube Part 1](https://youtu.be/GGSkEnNGisc)
+
+📽️ [YouTube Part 2](https://youtu.be/GGSkEnNGisc)
 
 
 ---
@@ -82,7 +83,7 @@ Experiment with techniques for precise finger and jewelry rendering and localiza
 
 ---
 
-## 🚀 How to Run 
+## 🚀 How to Run (Local PC / Streamlit Local / Streamlit Cloud)
 
 ### Local PC
 
@@ -157,9 +158,9 @@ This project demonstrates:
 
 ## 👨‍💻 Author
 
-**[Wesley Gonzales]**  
+**Wesley Gonzales**  
 Computer Vision & AI Engineer  
-📫 [wes.gb31@gmail.com]  
+📫 wes.gb31@gmail.com  
 🔗 [https://www.linkedin.com/in/wesleygb/](https://www.linkedin.com/in/wesleygb/)  
 🤖 [My Github](https://github.com/WesleyG31)
 ---
