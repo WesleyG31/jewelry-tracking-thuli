@@ -44,6 +44,8 @@ RingDetectorYOLO → YOLOv8 detection
 Overlay (OpenCV or Streamlit UI)
 ```
 
+---
+
 ### Pipeline
 
 1. Hand Tracking – hand_tracker.py
@@ -66,7 +68,6 @@ Overlay (OpenCV or Streamlit UI)
 
     Works on the small area and has very low latency
 
-
 4. (Main design) Ring Detection by YOLO – ring_detector_yolo.py
 
     Loads a YOLOv8n model trained specifically on ring data
@@ -81,6 +82,7 @@ Overlay (OpenCV or Streamlit UI)
 
     app.py: Streamlit web app to test easily in browser
 
+---
 
 ### Design Decisions & Alternatives
 
@@ -168,8 +170,11 @@ Then I needed to understand how to get the points of the rectangle, what calcula
 Everything had to be based on the direction of the vector.
 
 Top-Left = cx - lx - wx, cy - ly - wy
+
 Top-Right = cx - lx + wx, cy - ly + wy
+
 Bottom-Right = cx + lx + wx, cy + ly + wy
+
 Bottom-Left = cx + lx - wx, cy + ly - wy
 
 
@@ -286,9 +291,9 @@ Presentation matters — making your tools usable for others adds serious value 
 
 ## Failure Cases & Limitations / Technical Trade-offs
 
-Accuracy depends on the objective. In this case is better if we can detect the rings despite the hand is far from the camera.
-Detection needs to be really fast, that's why I just analyze a region of the finger.
-Need more dataset to improve detection but mostly types of rings.
+- Accuracy depends on the objective. In this case is better if we can detect the rings despite the hand is far from the camera.
+- Detection needs to be really fast, that's why I just analyze a region of the finger.
+- Need more dataset to improve detection but mostly types of rings.
 
 ---
 
