@@ -156,6 +156,14 @@ This project demonstrates:
 
 ---
 
+## Future Improvements
+
+### 1 
+
+### 2
+
+---
+
 ## 👨‍💻 Author
 
 **Wesley Gonzales**  
