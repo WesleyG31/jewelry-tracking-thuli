@@ -29,6 +29,10 @@ Ahora el siguiente paso es detectar el anillo: me piden centrarme en el seguimie
 🧠 ¿Qué hará ring_detector.py?
 Recibirá los landmarks de una mano y el frame de imagen.
 
+
+https://github.com/user-attachments/assets/e1dc3017-fae5-4062-9adf-3b18c2bc83aa
+
+
 Identificará las zonas de los dedos donde normalmente se usan anillos.
 
 Extraerá esas regiones.
