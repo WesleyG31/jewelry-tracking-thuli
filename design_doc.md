@@ -328,6 +328,18 @@ Presentation matters — making your tools usable for others adds serious value 
 - Build a full mobile-first UI.
 - Used a smaller o bigger model depends on the platform.
 
+## 🔮 3D & Synthesis Module (In Progress)
+
+To expand the project beyond ring detection, I'm now developing a 3D and video synthesis extension, aligned with Thuli’s product vision.
+
+This includes:
+- Generating novel views of hands with rings using NeRF or Gaussian Splatting.
+- Rigging a 3D hand in Blender with ring assets and animating it from MediaPipe landmarks.
+- Exploring ways to overlay 3D rings onto tracked hands in real time (future AR use case).
+
+All experiments will be documented and included in `/3d_synthesis/`.
+
+
 ---
 
 ## Alignment with Thuli Studios Vision

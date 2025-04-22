@@ -163,6 +163,15 @@ This project demonstrates:
 > ✅ Perfect for companies in mobile-first jewelry marketplace designed for modern consumers
 
 ---
+## 🔮 3D & Synthesis Module (In Progress)
+
+To expand the project beyond ring detection, I'm now developing a 3D and video synthesis extension, aligned with Thuli’s product vision.
+
+This includes:
+- Generating novel views of hands with rings using NeRF or Gaussian Splatting.
+- Rigging a 3D hand in Blender with ring assets and animating it from MediaPipe landmarks.
+
+All experiments will be documented and included in `/3d_synthesis/`.
 
 ## 👨‍💻 Author
 
