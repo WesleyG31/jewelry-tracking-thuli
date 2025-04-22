@@ -19,6 +19,8 @@ Experiment with techniques for precise finger and jewelry rendering and localiza
 - Discussion on failure cases and iterative improvements.
 - Experiments, decision-making process, and learning points.
 
+3D & Synthesis Module (In Progress)
+All experiments will be documented and included in `/3d_synthesis/`.
 ```
 ├── desing_doc.md                   # Provide a detailed design doc 
 ```
