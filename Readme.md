@@ -29,6 +29,8 @@ All experiments will be documented and included in `/3d_synthesis/`.
 
 ## 📽️ Demo
 
+📽️ [3D Synthesis + Ring Tracking](https://youtu.be/1PjCs4UYd4g)
+
 📽️ [YouTube Part 1](https://youtu.be/q1fTYXFudIs)
 
 📽️ [YouTube Part 2](https://youtu.be/GGSkEnNGisc)
