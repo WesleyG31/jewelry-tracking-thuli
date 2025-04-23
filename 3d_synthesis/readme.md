@@ -18,3 +18,6 @@ This approach can simplify how jewelry items are matched and visualized, providi
 
 # Demo 
 
+
+https://github.com/user-attachments/assets/8a36582d-a63b-4664-8535-49548845ab4a
+
