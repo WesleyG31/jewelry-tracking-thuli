@@ -22,7 +22,7 @@ There is a Demo Video below.
 
 ## Find more information in desing doc
 
-[Desing Doc](https://github.com/WesleyG31/jewelry-tracking-thuli/blob/main/3d_synthesis/readme.md)
+[Design Doc](https://github.com/WesleyG31/jewelry-tracking-thuli/blob/main/3d_synthesis/readme.md)
 
 - Assumptions and scope of work.
 - Step-by-step implementation details.
