@@ -1,4 +1,4 @@
-# Hands & Ring tracking and detection (Mediapipe and YOLO)
+# Hands & Ring tracking and detection (Mediapipe and YOLO) + 3D Synthesis Gaussian Splatting
 
 ---
 
@@ -12,6 +12,14 @@ Experiment with techniques for precise finger and jewelry rendering and localiza
 
 ---
 
+## 3D & Synthesis Module (Finished)
+
+All experiments will be documented and included in `/3d_synthesis/`.
+
+There is a Demo Video below.
+
+---
+
 ## Find more information in desing doc
 
 - Assumptions and scope of work.
@@ -19,8 +27,6 @@ Experiment with techniques for precise finger and jewelry rendering and localiza
 - Discussion on failure cases and iterative improvements.
 - Experiments, decision-making process, and learning points.
 
-3D & Synthesis Module (In Progress)
-All experiments will be documented and included in `/3d_synthesis/`.
 ```
 ├── desing_doc.md                   # Provide a detailed design doc 
 ```
