@@ -10,6 +10,10 @@ This approach can simplify how jewelry items are matched and visualized, providi
 
 ## 🧠 Technologies Used
 
+
+https://github.com/jonstephens85/gaussian-splatting-Windows
+
+
 | Component                    | Tech Stack                                   |
 |------------------------------|----------------------------------------------|
 | 3D Synthesis                 | Gaussian Splatting                           |
