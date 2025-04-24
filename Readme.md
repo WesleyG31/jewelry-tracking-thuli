@@ -37,6 +37,8 @@ There is a Demo Video below.
 
 ## 📽️ Demo
 
+📽️ [3D Synthesis (body) + Ring & Hand Tracking](https://youtu.be/J2G8DxPN0nM)
+
 📽️ [3D Synthesis + Ring Tracking](https://youtu.be/1PjCs4UYd4g)
 
 📽️ [YouTube Part 1](https://youtu.be/q1fTYXFudIs)

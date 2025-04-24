@@ -9,7 +9,7 @@ def main():
 
     base_path = os.path.dirname(__file__)
 
-    video_path= r"C:\Users\wesgb\Downloads\202504231500 (1).mp4"  #1 for webcam, 0 for external camera, or path to video file
+    video_path= 1  #1 for webcam, 0 for external camera, or path to video file
     cap= cv2.VideoCapture(video_path)
     tracker= HandTracker()
 
@@ -19,11 +19,12 @@ def main():
     output_video_frames=[]
 
     while cap.isOpened():
-        success,fram = cap.read()
+        success,frame = cap.read()
         if not success:
             break
-
-        frame= cv2.flip(fram,1)
+        
+        if video_path == 1:
+            frame= cv2.flip(frame,1)
 
         landmarks_list= tracker.detect_hands(frame)
 
