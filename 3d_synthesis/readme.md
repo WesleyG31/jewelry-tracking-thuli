@@ -19,5 +19,9 @@ This approach can simplify how jewelry items are matched and visualized, providi
 # Demo 
 
 
+https://github.com/user-attachments/assets/b3e78ac7-30f6-4416-8e57-9607d76ce947
+
 https://github.com/user-attachments/assets/8a36582d-a63b-4664-8535-49548845ab4a
+
+
 
